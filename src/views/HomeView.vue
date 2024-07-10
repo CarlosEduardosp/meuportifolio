@@ -1,26 +1,26 @@
 <script>
-import Projetos from '../components/projetos.vue'; 
+import Projetos from '../components/projetos.vue';
 
 export default {
   name: 'Home',
-  
+
   components: {
     Projetos
   },
 
-  data(){
+  data() {
     return {
       acesso_projetos: false,
-      
+
     }
   },
 
   methods: {
-    ativar_projetos(){
+    ativar_projetos() {
       this.acesso_projetos = !this.acesso_projetos
     },
-    
-    
+
+
   }
 }
 </script>
@@ -32,35 +32,54 @@ export default {
       <img class="imagem_inicial" src="../assets/logo-carlos-eduardo.png" alt="">
     </div>
 
-    <div class="separador"></div>   
-    
+    <div class="separador"></div>
+
 
     <div class="div_frase" v-show="acesso_projetos == false">
-      <img class="imagem_perfil" src="../assets/20231021_173135.jpg" alt="" v-show="acesso_projetos == false">
-      <p class="frase">Sou desenvolvedor atuante no back end com Python, com experiência em REST API
-        utilizando Flask e FastAPI. Trabalho com SQLAlchemy para comunicação com bancos de
-        dados SQL e utilizo Docker para criação de imagens e hospedagem em ambientes de
-        nuvem. Sou proficiente em Git/GitHub para controle de versões e hospedagem através de
-        repositórios, além de realizar testes unitários com pytest.
-        No front end, trabalho com Vue.js, JavaScript, CSS e HTML, hospedando em plataformas
-        como Netlify, Heroku e Render. Tenho experiência em registro de domínios e configuração
-        na plataforma de hospedagem.</p>
+      <img class="imagem_perfil" src="../assets/kadu.jpg" alt="" v-show="acesso_projetos == false">
+      <div class="frases">
+      <p class="frase">
+
+        Olá! Sou Carlos Eduardo, também conhecido como 'Kadu' entre amigos, possuo experiência como desenvolvedor
+        Python especializado em backend. Com foco na criação de APIs seguindo os princípios da Clean
+        Architecture. E no frontend possuo habilidades com Javascript, Css, HTML e VuesJS.       
+      </p>
+      <ul class="frase">
+        Tecnologias e Habilidades Principais:
+
+        <li class="topicos">Frameworks: Experiência com Flask e FastAPI.</li>
+        <li class="topicos">Bancos de Dados: Utilização proficiente de ORMs como SQLAlchemy e psycopg2 para integração com PostgreSQL.</li>
+        <li class="topicos">Contêineres e Deploy: Domínio em Docker para gerenciamento de contêineres e experiência em deploys no
+        Google Cloud Platform (GCP) e outras plataformas como Render.</li>
+        <li class="topicos">Testes e Automação: Familiaridade com Pytest para testes unitários e de integração, automação de processos com
+        CI/CD utilizando GitHub Actions.</li>
+        <li class="topicos">Arquitetura e Design: Aplicação dos princípios SOLID, arquiteturas modulares, injeção de dependência e design
+        patterns.</li>
+        <li class="topicos">Desenvolvimento de APIs: Implementação de REST APIs, seguindo boas práticas de desenvolvimento de software.</li>
+        <li class="topicos">Testes de Integração: Experiência em testes de integração utilizando ferramentas como Postman.</li>
+        <li class="topicos">Versionamento e Colaboração: Uso eficaz de Git e GitHub para versionamento de código e colaboração em equipe.</li>        
+        </ul>
+      <p class="frase">
+        Estou sempre em busca de novos desafios no desenvolvimento de software, focado em criar soluções de qualidade e
+        escaláveis.
+      </p>
+      </div>
     </div>
 
     <Projetos class="componente_projetos" v-show="acesso_projetos == true"></Projetos>
 
-    
+
 
     <div class="final">
 
       <div class="decora_btn" @click="ativar_projetos()">
         <a class="projetos" href="#">
-            <img class="icone_projeto" src="../assets/portifolio.png" alt="" v-show="acesso_projetos == false">
-            <img class="icone_projeto" src="../assets/voltar.png" alt="" v-show="acesso_projetos == true">
-          
-        <p class="mensagem" v-show="acesso_projetos == false">Conheça meus Projetos</p>
-        <p class="mensagem" v-show="acesso_projetos == true" >Voltar a Página Anterior</p>
-      </a>
+          <img class="icone_projeto" src="../assets/portifolio.png" alt="" v-show="acesso_projetos == false">
+          <img class="icone_projeto" src="../assets/voltar.png" alt="" v-show="acesso_projetos == true">
+
+          <p class="mensagem" v-show="acesso_projetos == false">Conheça meus Projetos</p>
+          <p class="mensagem" v-show="acesso_projetos == true">Voltar a Página Anterior</p>
+        </a>
       </div>
 
       <div class="btns">
@@ -97,8 +116,8 @@ export default {
   .main {
     display: flex;
     flex-direction: column;
-    align-items:center;
-    justify-content:space-between;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .nome {
@@ -131,7 +150,7 @@ export default {
     text-align: justify;
     margin-top: 20px;
     font-size: 0.87rem;
-    color:#c9c9c9;
+    color: #c9c9c9;
   }
 
   .icone {
@@ -141,6 +160,7 @@ export default {
     margin: 5px;
     background-color: #fff;
   }
+
   .icone_projeto {
     width: 60px;
     border-radius: 10px;
@@ -157,7 +177,8 @@ export default {
     align-items: center;
     justify-content: center;
   }
-  .final{
+
+  .final {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -166,36 +187,46 @@ export default {
     margin-top: 10px;
     margin-bottom: 20px;
   }
-  .mensagem{
+
+  .mensagem {
     color: black;
     text-align: center;
     font-weight: bold;
   }
-  .imagem_inicial{
+
+  .imagem_inicial {
     width: 80%;
     margin: 5px;
     margin-top: 10px;
-  } 
-  
-  .titulo{
+  }
+
+  .titulo {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 10px;
   }
-  .projetos{
+
+  .projetos {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-decoration: none;
   }
-  .componente_projetos{
-  }
+
+  .componente_projetos {}
 
   p {
     color: #fff;
+  }
+
+  .topicos{
+    font-size: 0.8rem;
+    margin-left: 5%;
+    color: #f1f1f1;
+    line-height: 1.2rem;
   }
 }
 
@@ -203,8 +234,8 @@ export default {
   .main {
     display: flex;
     flex-direction: column;
-    align-items:center;
-    justify-content:space-between;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .nome {
@@ -220,7 +251,7 @@ export default {
 
   .imagem_perfil {
     width: 30%;
-    margin-top: 5%;
+    margin-top: 0%;
     border-radius: 20px;
     box-shadow: 0px 0px 10px 2px #ffffff;
   }
@@ -230,16 +261,18 @@ export default {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 80%;
+    width: 83%;
+    margin-top: 2%;
     gap: 10%;
   }
 
   .frase {
     text-align: justify;
-    margin-top: 20px;
-    font-size: 1rem;
-    color:#c9c9c9;
-    line-height: 140%;
+    margin-top: 0px;
+    font-size: 0.85rem;
+    color: #c9c9c9;
+    line-height: 160%;
+    margin: 0.5% 0%;
   }
 
   .icone {
@@ -249,6 +282,7 @@ export default {
     margin: 5px;
     background-color: #fff;
   }
+
   .icone_projeto {
     width: 60px;
     border-radius: 10px;
@@ -265,7 +299,8 @@ export default {
     align-items: center;
     justify-content: center;
   }
-  .final{
+
+  .final {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -274,37 +309,52 @@ export default {
     margin-top: 10px;
     margin-bottom: 20px;
   }
-  .mensagem{
+
+  .mensagem {
     color: black;
     text-align: center;
     font-weight: bold;
   }
-  .imagem_inicial{
+
+  .imagem_inicial {
     width: 20%;
     margin: 5px;
     margin-top: 10px;
-  } 
-  
-  .titulo{
+  }
+
+  .titulo {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 10px;
   }
-  .projetos{
+
+  .projetos {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-decoration: none;
   }
-  .componente_projetos{
-  }
+
+  .componente_projetos {}
 
   p {
     color: #fff;
   }
-}
 
+  .frases{
+    display: flex;
+    flex-direction: column;
+    align-items:baseline;
+    justify-content: center;
+  }
+
+  .topicos{
+    font-size: 0.8rem;
+    margin-left: 5%;
+    color: #f1f1f1;
+  }
+}
 </style>
